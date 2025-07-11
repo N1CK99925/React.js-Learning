@@ -3,14 +3,27 @@ import './App.css';
  
 
 //Functional Component - write the first word captial 
-function MyButton (){
-  return <>
-  
+const  Header = () => {
+  return (
+    <>
+    <div style={{backgroundColor:'grey',display:'flex',flex:'1 0 auto'}}>
+      <h1 className='h1'>Shopify App</h1>
+      {/* in react you write ClassName instead of class */}
+      <input placeholder='Search' />
+      <ul style={{display:'flex'}}>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    </>
+  )
 }
-const Search = () => <input placeholder="search sm shit"></input>
+
 function App() {
   return (
    <> 
+   <Header />
   </>
   );
 }
