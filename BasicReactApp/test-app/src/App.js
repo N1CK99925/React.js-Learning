@@ -3,22 +3,36 @@ import './App.css';
  
 
 //Functional Component - write the first word captial 
-let count = 0;
 
+const isAdmin = true;
+
+const isLoading = true;
+
+const products = ['Shirts', 'pants', 'tshirts','Jeans']
+
+function Loader(){
+  return (
+    <>
+    <h3>Loading......</h3></>
+  )
+}
 
 function App() {
-
-  const onIncrementClick = () => {
-    count = count + 1
-    console.log({count})
-  }
-  const onSearchChange = (event) => {
-    console.log(event.target.value)
-  }
   return (
-   <> 
-  <button onClick={onIncrementClick}>Increment</button>
-  <input onChange={onSearchChange} placeholder='Search' />
+<>
+<h1>Welcome to the site</h1>
+ {
+  isAdmin ? <h2>this is admin portal</h2> : <h2>this is user portal</h2>
+ }
+
+{
+  isLoading ? <h3>Page Loaded</h3> : <Loader />
+  
+}
+{
+  products.map(product => <p>{product}</p>)
+}
+
   </>
   );
 }
